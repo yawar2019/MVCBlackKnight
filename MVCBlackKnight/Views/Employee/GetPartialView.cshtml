@@ -1,0 +1,27 @@
+﻿@model  List<MVCBlackKnight.Models.EmployeeModel>
+@{
+    ViewBag.Title = "GetPartialView";
+}
+
+<h2>GetPartialView</h2>
+
+<ul>
+    <li>Akhil</li>
+    <li>Aishwariya</li>
+    <li>Dheeraj</li>
+    <li>Rajini</li>
+    <li>veenay</li>
+    <li>ladla</li>
+    <li>shiva</li>
+</ul>
+
+<br />
+
+
+
+
+
+
+@Html.Partial("_StudentPartialView", Model)
+   @{Html.RenderPartial("_StudentPartialView", Model);}
+ 

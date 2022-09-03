@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "SendInfo3";
+}
+
+<h2>SendInfo3</h2>
+
+<table class="table table-bordered table-condensed">
+    <tr>
+        <th>EmpId</th>
+        <th>EmpName</th>
+        <th>EmpSalary</th>
+    </tr>
+   @foreach (var item in ViewBag.data)//3 employees
+   {
+       <tr>
+           <td>@item.EmpId</td>
+           <td>@item.EmpName</td>
+           <td>@item.EmpSalary</td>
+       </tr>
+   }
+
+</table>
