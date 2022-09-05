@@ -124,6 +124,26 @@ namespace MVCBlackKnight.Controllers
         {
             return RedirectToAction("GetData","Admin",new {id=1211 });
         }
+
+        public ContentResult GetContnetForMe(int? id)
+        {
+            
+            if(id==1)
+            {
+                return Content("<script>alert('World')</script>");
+
+            }
+            else if(id==2)
+            {
+                return Content("<p style=color:Red>Hello World</p>");
+
+            }
+            else
+            {
+                return Content("Hello World");
+
+            }
+        }
     }
 }
 //

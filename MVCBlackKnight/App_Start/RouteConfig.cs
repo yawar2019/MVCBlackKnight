@@ -25,8 +25,8 @@ namespace MVCBlackKnight
 
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{EmpId}",
-                defaults: new { controller = "Home", action = "Index", EmpId = UrlParameter.Optional }
+                url: "{controller}/{action}/{Id}",
+                defaults: new { controller = "Home", action = "Index", Id = UrlParameter.Optional }
             );
         }
     }
