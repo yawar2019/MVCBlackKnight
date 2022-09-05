@@ -10,7 +10,7 @@ namespace MVCBlackKnight.Controllers
     public class AdminController : Controller
     {
         // GET: Admin
-        public string GetData()
+        public string GetData(int id)
         {
             return "Hello World";
         }

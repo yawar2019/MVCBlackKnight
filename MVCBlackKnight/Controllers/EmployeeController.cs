@@ -87,7 +87,7 @@ namespace MVCBlackKnight.Controllers
         }
 
 
-        public ActionResult GetPartialView()
+        public PartialViewResult GetPartialView()
         {
             List<EmployeeModel> listEmp = new List<EmployeeModel>();
 
@@ -111,7 +111,18 @@ namespace MVCBlackKnight.Controllers
             listEmp.Add(obj2);
 
 
-            return View(listEmp);
+            return PartialView("_StudentPartialView", listEmp);
+        }
+
+        public RedirectToRouteResult GetmeRoute()
+        {
+            return RedirectToRoute("Default2");
+        }
+
+
+        public RedirectToRouteResult GetmeRoute2()
+        {
+            return RedirectToAction("GetData","Admin",new {id=1211 });
         }
     }
 }

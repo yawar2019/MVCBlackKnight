@@ -13,6 +13,16 @@ namespace MVCBlackKnight
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            
+
+
+            routes.MapRoute(
+                name: "Default2",
+                url: "Students/MVC",
+                defaults: new { controller = "Employee", action = "Index", EmpId = UrlParameter.Optional }
+            );
+
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{EmpId}",

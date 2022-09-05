@@ -22,6 +22,13 @@
 
 
 
-@Html.Partial("_StudentPartialView", Model)
+@{
+    var s = Html.Partial("_StudentPartialView", Model);
+    int a = 10;
+    if (a == 10)
+    {
+        @s
+    }
+        }
    @{Html.RenderPartial("_StudentPartialView", Model);}
  
