@@ -12,6 +12,8 @@ namespace DataBaseApproach2.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class EmployeeEntities : DbContext
     {
@@ -27,5 +29,23 @@ namespace DataBaseApproach2.Models
     
         public virtual DbSet<employeeDetail> employeeDetails { get; set; }
         public virtual DbSet<Department> Departments { get; set; }
+    
+        public virtual int sp_CreateEmployee(string empName, Nullable<int> empSalary)
+        {
+            var empNameParameter = empName != null ?
+                new ObjectParameter("EmpName", empName) :
+                new ObjectParameter("EmpName", typeof(string));
+    
+            var empSalaryParameter = empSalary.HasValue ?
+                new ObjectParameter("EmpSalary", empSalary) :
+                new ObjectParameter("EmpSalary", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_CreateEmployee", empNameParameter, empSalaryParameter);
+        }
+    
+        public virtual ObjectResult<sp_employee_Result> sp_employee()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_employee_Result>("sp_employee");
+        }
     }
 }

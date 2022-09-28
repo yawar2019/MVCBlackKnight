@@ -17,7 +17,7 @@ namespace DataBaseApproach2.Controllers
         // GET: employeeDetails
         public ActionResult Index()
         {
-            return View(db.employeeDetails.ToList());
+            return View(db.sp_employee());
         }
 
         // GET: employeeDetails/Details/5
@@ -50,8 +50,8 @@ namespace DataBaseApproach2.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.employeeDetails.Add(employeeDetail);
-                db.SaveChanges();
+                db.sp_CreateEmployee(employeeDetail.EmpName,employeeDetail.EmpSalary);
+                //db.SaveChanges();
                 return RedirectToAction("Index");
             }
 

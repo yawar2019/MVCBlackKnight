@@ -157,6 +157,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202209161602112_InitialCreate.cs" />
+    <Compile Include="Migrations\202209161602112_InitialCreate.Designer.cs">
+      <DependentUpon>202209161602112_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202209261539274_DesignationColumn.cs" />
+    <Compile Include="Migrations\202209261539274_DesignationColumn.Designer.cs">
+      <DependentUpon>202209261539274_DesignationColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\EmployeeContext.cs" />
     <Compile Include="Models\EmployeeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -173,6 +182,7 @@
     <Content Include="scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Default\Create.cshtml" />
     <Content Include="Views\Default\Edit.cshtml" />
+    <Content Include="Views\Default\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -182,6 +192,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202209161602112_InitialCreate.resx">
+      <DependentUpon>202209161602112_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209261539274_DesignationColumn.resx">
+      <DependentUpon>202209261539274_DesignationColumn.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,89 @@
+﻿@model MVCBlackKnight.Models.EmployeeModel
+@{
+    ViewBag.Title = "HtmlHelperExampe";
+}
+
+<h2>HtmlHelperExampe</h2>
+
+@Html.TextBox("as","radha",new { style = "background-color:green",@class="form-control", @onclick = "fun()" })
+<br />
+<input type="text" name="DeptName" value="james" style="background-color:skyblue" class="form-control" onclick="fun()" />
+@Html.TextBoxFor(x=>x.EmpName,new { style = "background-color:gray", @class="form-control", onclick="fun()" })
+@Html.Password("pwd","b#12345")
+@Html.DropDownList("Country",new List<SelectListItem>() {
+
+    new SelectListItem {Text="India",Value="1" },
+    new SelectListItem {Text="japan",Value="2",Selected=true },
+    new SelectListItem {Text="china",Value="3" }
+
+},"Select Country")
+@Html.DropDownList("EmployeeList")
+@Html.DropDownListFor(x=>x.EmpName,(IEnumerable<SelectListItem>)ViewBag.EmployeeList)
+
+<script>
+    function fun()
+    {
+        alert('Hello tiger');
+    }
+</script>
+
+
+
+@*HtmlHelper:
+
+it is a C# methods which is comming from HtmlHelper class and  this is predefined class and it used to create Html Controls
+
+Html Helper is devided into 2 types
+one is loosely type html helper
+
+eg:@Html.TextBox("EmpNamjj"),@html.CheckBox()
+
+In Loosly type html helper no need of definingmodel ina view page .
+All names of field you can specify statically
+no intelisence support
+every field name you need to remember
+no strongly type checking with model
+
+Second is Strongly Type HtmlHelper
+
+we required Compulsary model
+without model you cannot use Strongly type htmlhelper
+Strongly type htmlhelper use model and provide intelisence support
+no need to remember all filed names
+strongly type checking will be done and if you write wrong field name then it will throw error there itself
+example of Strongly type htl helper
+
+@Html.TextboxFor()
+
+@Html.checkboxFor()
+
+Automatically binding of value will be done using model
+use lambda expression to select filed
+
+eg:@Html.TextboxFor(x => x.EmpName)
+
+
+
+public ActionResult inilizevalue()
+{
+EmployeeModel emp=new  EmployeeModel();
+emp.EmpName="jiva";
+return View(emp);}
+
+
+
+@Html.TextboxFor(x => x.EmpName)
+
+@Html.Password("pwd", "helo", new {class=""}) id,name*@
+
+
+
+
+
+
+
+
+
+
+
+

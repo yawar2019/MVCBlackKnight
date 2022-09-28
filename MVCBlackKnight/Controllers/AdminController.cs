@@ -192,5 +192,17 @@ namespace MVCBlackKnight.Controllers
             return View(ed);
         }
 
+
+        public ActionResult HtmlHelperExampe()
+        {
+
+
+            EmployeeModel emp = new Models.EmployeeModel();
+            emp.EmpName = "jiva";
+            StaffEntities db = new StaffEntities();
+            ViewBag.EmployeeList = new SelectList(db.employeeDetails, "EmpId", "EmpName");
+            return View(emp);
+        }
+
     }
 }
