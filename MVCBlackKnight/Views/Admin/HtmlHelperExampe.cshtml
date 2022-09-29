@@ -19,8 +19,22 @@
 },"Select Country")
 @Html.DropDownList("EmployeeList")
 @Html.DropDownListFor(x=>x.EmpName,(IEnumerable<SelectListItem>)ViewBag.EmployeeList)
+<span>java</span>@Html.CheckBox("java",true)
+<span>Gender</span>@Html.RadioButton("Gender","Male",true)<span>Male</span>
+                       @Html.RadioButton("Gender", "FeMale")<span>FeMale</span>
+
+@Html.TextArea("Address","hyderabad",10,15,null)
+
+
+<script src="~/scripts/jquery-1.10.2.min.js"></script>
 
 <script>
+
+    $('#EmployeeList').on("change",function(){
+        alert($('#EmployeeList option:selected').text() + '-' + $('#EmployeeList option:selected').val());
+
+    })
+
     function fun()
     {
         alert('Hello tiger');

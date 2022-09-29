@@ -195,14 +195,28 @@ namespace MVCBlackKnight.Controllers
 
         public ActionResult HtmlHelperExampe()
         {
-
-
             EmployeeModel emp = new Models.EmployeeModel();
             emp.EmpName = "jiva";
             StaffEntities db = new StaffEntities();
-            ViewBag.EmployeeList = new SelectList(db.employeeDetails, "EmpId", "EmpName");
+            ViewBag.EmployeeList = new SelectList(db.employeeDetails, "EmpId", "EmpName",76043);
             return View(emp);
         }
 
+        public ActionResult RegistrationForm()
+        {
+            StaffEntities db = new StaffEntities();
+            ViewBag.EmployeeList = new SelectList(db.employeeDetails, "EmpId", "EmpName", 76043);
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult RegistrationForm(RegisterModel reg)
+        {
+            StaffEntities db = new StaffEntities();
+            ViewBag.EmployeeList = new SelectList(db.employeeDetails, "EmpId", "EmpName", 76043);
+
+            return View();
+        }
     }
 }
