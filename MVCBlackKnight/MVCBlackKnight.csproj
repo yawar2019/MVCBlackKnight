@@ -142,6 +142,8 @@
       <DependentUpon>StaffModel.edmx</DependentUpon>
       <LastGenOutput>StaffModel.cs</LastGenOutput>
     </Content>
+    <Content Include="notes\tempdata.txt" />
+    <Content Include="notes\viewBAg.txt" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="scripts\bootstrap.js" />
@@ -154,6 +156,9 @@
     <Content Include="Models\StaffModel.edmx.diagram">
       <DependentUpon>StaffModel.edmx</DependentUpon>
     </Content>
+    <Content Include="notes\Asp.netMvc Material.docx" />
+    <Content Include="notes\Html helpers.docx" />
+    <Content Include="notes\MvcNew Material.docx" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
