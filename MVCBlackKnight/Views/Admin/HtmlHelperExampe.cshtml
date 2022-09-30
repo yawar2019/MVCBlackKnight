@@ -1,4 +1,7 @@
 ﻿@model MVCBlackKnight.Models.EmployeeModel
+@using MVCBlackKnight.CustomControl
+
+
 @{
     ViewBag.Title = "HtmlHelperExampe";
 }
@@ -8,8 +11,17 @@
 @Html.TextBox("as","radha",new { style = "background-color:green",@class="form-control", @onclick = "fun()" })
 <br />
 <input type="text" name="DeptName" value="james" style="background-color:skyblue" class="form-control" onclick="fun()" />
-@Html.TextBoxFor(x=>x.EmpName,new { style = "background-color:gray", @class="form-control", onclick="fun()" })
-@Html.Password("pwd","b#12345")
+@Html.EditorFor(x => x.EmpName, new { style = "background-color:gray", @class = "form-control", onclick = "fun()" })
+@Html.EditorFor(x => x.EmpId, new { style = "background-color:gray", @class = "form-control", onclick = "fun()" })
+@Html.EditorFor(x => x.status, new { style = "background-color:gray", @class = "form-control", onclick = "fun()" })
+@Html.Password("pwd","b#12345")<br />
+<br />
+<p>Begining</p>
+@Html.EditorForModel(Model)
+<p>End</p>
+
+
+<br />
 @Html.DropDownList("Country",new List<SelectListItem>() {
 
     new SelectListItem {Text="India",Value="1" },
@@ -24,6 +36,30 @@
                        @Html.RadioButton("Gender", "FeMale")<span>FeMale</span>
 
 @Html.TextArea("Address","hyderabad",10,15,null)
+
+@MycustomControl.MyLabel("I accept Agreement") @*1st approach*@
+ @*2nd approach*@
+@Html.createUrControl("text")<br />
+@Html.createUrControl("file")<br />
+@Html.createUrControl("checkbox")<br />
+@Html.createUrControl("radio")<br />
+
+
+@helper labelbyrazzorcode(string content)
+{
+    <label>@content</label>
+}
+@labelbyrazzorcode("hi this is ali")
+
+
+
+
+
+
+
+
+
+
 
 
 <script src="~/scripts/jquery-1.10.2.min.js"></script>
