@@ -1,4 +1,5 @@
-﻿using MVCBlackKnight.Models;
+﻿using MVCBlackKnight.CustomFilter;
+using MVCBlackKnight.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +8,18 @@ using System.Web.Mvc;
 
 namespace MVCBlackKnight.Controllers
 {
+
+
     public class AdminController : Controller
     {
+        [FirstFilter]
+
+        public ActionResult TestFilter()
+        {
+            ViewBag.FirstName = "Gaurav";
+            return View();
+        }
+
         // GET: Admin
         public string GetData(int id)
         {
@@ -17,22 +28,22 @@ namespace MVCBlackKnight.Controllers
 
         public string GetData2(int? EmpId)
         {
-            return "Hello World MY Id is "+EmpId;
+            return "Hello World MY Id is " + EmpId;
         }
 
 
-        public string GetData3(int? EmpId,string Name,string Designation)
+        public string GetData3(int? EmpId, string Name, string Designation)
         {
-            return "Hello World MY Id is " + EmpId+" and Name is "+Name+" Designation"+Designation;
+            return "Hello World MY Id is " + EmpId + " and Name is " + Name + " Designation" + Designation;
         }
 
 
 
         public string GetData4()
         {
-            return "Hello World MY Id is " +Request.QueryString["EmpId"] +
+            return "Hello World MY Id is " + Request.QueryString["EmpId"] +
                 " and Name is " + Request.QueryString["Name"]
-                + " Designation" +Request.QueryString["Designation"];
+                + " Designation" + Request.QueryString["Designation"];
         }
 
 
@@ -53,7 +64,7 @@ namespace MVCBlackKnight.Controllers
 
         public ActionResult SendInfo()
         {
-            
+
             ViewBag.tata = "Shradha";
             return View();
         }
@@ -135,7 +146,7 @@ namespace MVCBlackKnight.Controllers
             listEmp.Add(obj);
             listEmp.Add(obj1);
             listEmp.Add(obj2);
-            
+
 
 
             return View(listEmp);
@@ -198,7 +209,7 @@ namespace MVCBlackKnight.Controllers
             EmployeeModel emp = new Models.EmployeeModel();
             emp.EmpName = "jiva";
             StaffEntities db = new StaffEntities();
-            ViewBag.EmployeeList = new SelectList(db.employeeDetails, "EmpId", "EmpName",76043);
+            ViewBag.EmployeeList = new SelectList(db.employeeDetails, "EmpId", "EmpName", 76043);
             return View(emp);
         }
 
@@ -216,6 +227,24 @@ namespace MVCBlackKnight.Controllers
             StaffEntities db = new StaffEntities();
             ViewBag.EmployeeList = new SelectList(db.employeeDetails, "EmpId", "EmpName", 76043);
 
+            return View();
+        }
+        public ActionResult ValidationExample()
+        {
+
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ValidationExample(RegisterModel reg)
+        {
+            if (ModelState.IsValid)
+            {
+
+            }
+            else
+            {
+
+            }
             return View();
         }
     }
