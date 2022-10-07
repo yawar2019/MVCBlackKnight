@@ -246,6 +246,7 @@
     <Content Include="Views\Login\Dashboard.cshtml" />
     <Content Include="Views\Login\AboutUs.cshtml" />
     <Content Include="Views\Login\ContactUs.cshtml" />
+    <Content Include="Views\Login\CacheExample.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

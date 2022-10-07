@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeFirstApproach", "CodeFi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelBasedApproach", "ModelBasedApproach\ModelBasedApproach.csproj", "{D1B93F85-5DFE-4F91-8068-6CF21F20716F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionHanler", "ExceptionHanler\ExceptionHanler.csproj", "{AE5CB3AB-A853-4F41-B486-6B48A0960864}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{D1B93F85-5DFE-4F91-8068-6CF21F20716F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1B93F85-5DFE-4F91-8068-6CF21F20716F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1B93F85-5DFE-4F91-8068-6CF21F20716F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE5CB3AB-A853-4F41-B486-6B48A0960864}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE5CB3AB-A853-4F41-B486-6B48A0960864}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE5CB3AB-A853-4F41-B486-6B48A0960864}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE5CB3AB-A853-4F41-B486-6B48A0960864}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

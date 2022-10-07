@@ -51,5 +51,12 @@ namespace MVCBlackKnight.Controllers
             FormsAuthentication.SignOut();
             return Redirect("~/Login/Login");
         }
+
+        [OutputCache(Duration =20,Location =System.Web.UI.OutputCacheLocation.Client)]
+        public ActionResult CacheExample()
+        {
+            
+            return View();
+        }
     }
 }
