@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCBlackKnight", "MVCBlackKnight\MVCBlackKnight.csproj", "{C408A844-F1BD-4EE5-9645-BA732FD37993}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdoDotNet", "AdoDotNet\AdoDotNet.csproj", "{EE61A36B-37B9-4D92-8924-0AE3DCEC6209}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C408A844-F1BD-4EE5-9645-BA732FD37993} = {C408A844-F1BD-4EE5-9645-BA732FD37993}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseFirstApproach", "DatabaseFirstApproach\DatabaseFirstApproach.csproj", "{6406E44F-661A-4E7F-9F6E-8D42B9B83E1F}"
 EndProject

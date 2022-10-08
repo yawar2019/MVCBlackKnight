@@ -83,5 +83,13 @@ namespace AdoDotNet.Controllers
 
             return View();
         }
+
+        public ActionResult GetConsumeService()
+        {
+            calculatorService1.CalculatorServiceSoapClient obj = new calculatorService1.CalculatorServiceSoapClient();
+           var result= obj.Add(10, 20);
+             
+            return Content(result.ToString());
+        }
     }
 }
