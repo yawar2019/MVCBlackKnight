@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCBlackKnight", "MVCBlackKnight\MVCBlackKnight.csproj", "{C408A844-F1BD-4EE5-9645-BA732FD37993}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C7D9314E-B982-46D4-8047-B6F6AA995E20} = {C7D9314E-B982-46D4-8047-B6F6AA995E20}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdoDotNet", "AdoDotNet\AdoDotNet.csproj", "{EE61A36B-37B9-4D92-8924-0AE3DCEC6209}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -19,6 +22,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelBasedApproach", "ModelBasedApproach\ModelBasedApproach.csproj", "{D1B93F85-5DFE-4F91-8068-6CF21F20716F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionHanler", "ExceptionHanler\ExceptionHanler.csproj", "{AE5CB3AB-A853-4F41-B486-6B48A0960864}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfService1", "WcfService1\WcfService1.csproj", "{C7D9314E-B982-46D4-8047-B6F6AA995E20}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,6 +59,10 @@ Global
 		{AE5CB3AB-A853-4F41-B486-6B48A0960864}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE5CB3AB-A853-4F41-B486-6B48A0960864}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE5CB3AB-A853-4F41-B486-6B48A0960864}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7D9314E-B982-46D4-8047-B6F6AA995E20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7D9314E-B982-46D4-8047-B6F6AA995E20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7D9314E-B982-46D4-8047-B6F6AA995E20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7D9314E-B982-46D4-8047-B6F6AA995E20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

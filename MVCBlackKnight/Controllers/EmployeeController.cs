@@ -144,6 +144,13 @@ namespace MVCBlackKnight.Controllers
 
             }
         }
+
+        public string testWcfService()
+        {
+            ServiceReference2.Service1Client sc = new ServiceReference2.Service1Client("NetTcpBinding_IService1");
+            return sc.Add(12, 14);
+
+        }
     }
 }
 //
