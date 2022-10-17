@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<form>
+
+    EmpName <input type="text" name="EmpName" id="EmpName" /><br />
+    EmpSalary <input type="text" name="EmpSalary" id="EmpSalary" /><br />
+    <p id="Save">Click me</p>
+</form>
+
+<table id="table-1" class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>
+                Employee Id
+            </th>
+            <th>
+                EmployeeName
+            </th>
+            <th>
+                EmployeeSalary
+            </th>
+                    </tr>
+    </thead>
+</table>
+<br />
+<br />
+<script src="~/scripts/jquery-1.10.2.min.js"></script>
+
+<script>
+    onload = function showdata() {
+        $.ajax({
+            url: "http://localhost:51587/api/employeeDetailsApi/GetemployeeDetails",
+            type: "Get",
+            //data: {
+            //    EmpName:$('#EmpName').val(),
+            //},
+            datatype: "json",
+            success: function (result) {
+                alert(result);
+                $.each(result, function (i, key) {
+
+                    $("#table-1 tr:last").after('<tr><td>' + key.EmpId + '</td><td>' + key.EmpName + '</td><td>' + key.EmpSalary + '</td></tr>');
+                });
+            },
+            failure:function(ex)
+            {
+
+            }
+        });
+    }
+
+
+
+     $('#Save').click(function () {
+         var url = "http://localhost:51587/api/employeeDetailsApi/PostemployeeDetail";
+            var EmpName = $("#EmpName").val();
+            var EmpSalary = $("#EmpSalary").val();
+            $.post(url, {
+                EmpName: EmpName,
+                EmpSalary: EmpSalary
+            }, function (data) {
+                alert("Insert Successfully");
+                window.location.reload();
+            });
+        })
+</script>

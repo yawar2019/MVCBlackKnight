@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Web;
 using System.Web.Mvc;
 
@@ -90,6 +91,44 @@ namespace AdoDotNet.Controllers
            var result= obj.Add(10, 20);
              
             return Content(result.ToString());
+        }
+
+        public ActionResult GetEmployees()
+        {
+            IEnumerable<EmployeeModel> ListEmployeeModel = null;
+            using (HttpClient client  =new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://localhost:51587/api/");
+                var response = client.GetAsync("employeeDetailsApi/GetemployeeDetails");
+                response.Wait();
+                var result = response.Result;
+                if(result.IsSuccessStatusCode)
+                {
+                    var readresponse = result.Content.ReadAsAsync<IList<EmployeeModel>>();
+                    readresponse.Wait();
+                    ListEmployeeModel = readresponse.Result;
+                }
+
+            }
+                return View(ListEmployeeModel);
+        }
+
+        [HttpPost]
+        public ActionResult CreateEmp(EmployeeModel emp)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://localhost:51587/api/");
+                var response = client.PostAsJsonAsync("employeeDetailsApi/PostemployeeDetail",emp);
+                response.Wait();
+                var result = response.Result;
+                if (result.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("GetEmployees");
+                }
+
+            }
+            return View();
         }
     }
 }

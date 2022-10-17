@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionHanler", "Exceptio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfService1", "WcfService1\WcfService1.csproj", "{C7D9314E-B982-46D4-8047-B6F6AA995E20}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{B7B3653A-A68F-43D0-BB83-5EE82F248CA8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{C7D9314E-B982-46D4-8047-B6F6AA995E20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7D9314E-B982-46D4-8047-B6F6AA995E20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7D9314E-B982-46D4-8047-B6F6AA995E20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7B3653A-A68F-43D0-BB83-5EE82F248CA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7B3653A-A68F-43D0-BB83-5EE82F248CA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7B3653A-A68F-43D0-BB83-5EE82F248CA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7B3653A-A68F-43D0-BB83-5EE82F248CA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
